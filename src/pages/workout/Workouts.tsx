@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react'; 
-import useWorkout from '../../hooks/UseWorkout';
+import React, { useEffect } from 'react';
+import styles from './styles.module.scss';
 
 export default function Workouts({workouts}) {
 
@@ -23,7 +23,7 @@ export default function Workouts({workouts}) {
     }
 
     return (
-        <div>
+        <div className={styles.workouts}>
             <h3>My Workouts</h3>
             {makeWorkoutList(workouts)}
         </div>
