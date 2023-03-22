@@ -1,26 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import AddExcersise from './ExcersiseForm';
-import useWorkout from '../../hooks/UseWorkout';
-
-
+import styles from './styles.module.scss';
 
 export default function AddWorkout({handleChange}) {
     const [workoutName, setWorkoutName] = useState('');
     const [excersiseName, setExcersiseName] = useState('');
     const [reps, setReps] = useState('');
     const [excersises, setExcersises] = useState([]);
-    
-    const excersiseForm = (<div>
-        <label>
-            Excersise Name:
-            <input type="text" name="excersiseName" value={excersiseName} onChange={(e) => setExcersiseName(e.target.value)}/>
-        </label>
-        <label>
-            Reps:
-            <input type="number" name="reps" value={reps} onChange={(e) => setReps(e.target.value)}/>
-        </label>
-        <button onClick={(e) => addExcersise(e)}>Add Excersise</button>  
-    </div>)
 
     function submitForm(e) {
         e.preventDefault()
@@ -45,15 +30,27 @@ export default function AddWorkout({handleChange}) {
     }
 
     return (
-        <div>
+        <div className={styles.workoutForm}>
             <h3>Create Workout</h3>
             <form onSubmit={submitForm}>
-            <label>
-                Workout Name: 
-                <input type="text" name="workoutName" value={workoutName} onChange={(e) => setWorkoutName(e.target.value)}/>
-            </label>
-            {excersiseForm}
-            <input type="submit"/>
+                <label>
+                    Workout Name: 
+                    <input type="text" name="workoutName" value={workoutName} onChange={(e) => setWorkoutName(e.target.value)}/>
+                </label>
+                <br/>
+                <label>
+                    Excersise Name:
+                    <input type="text" name="excersiseName" value={excersiseName} onChange={(e) => setExcersiseName(e.target.value)}/>
+                </label>
+                <br/>
+                <label>
+                    Reps:
+                    <input type="number" name="reps" value={reps} onChange={(e) => setReps(e.target.value)}/>
+                </label>
+                <br/>
+                <button onClick={(e) => addExcersise(e)} className={styles.btn}>Add Excersise</button>  
+                <br/>
+                <input type="submit" className={styles.btn}/>
             </form>
         </div>
     )
