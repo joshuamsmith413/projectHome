@@ -1,11 +1,11 @@
 import React from 'react';
-import Home from './Home'
+import Link from 'next/link';
 
 export default function App() {
 
     return (
-        <div>App
-            <Home/>
+        <div>
+            <Link href="/workout">Workout</Link>
         </div>
     )
 }
