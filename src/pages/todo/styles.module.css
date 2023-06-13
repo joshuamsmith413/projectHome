@@ -1,0 +1,19 @@
+.todoMain {
+    display: grid;
+    margin: 0 auto;
+    grid-template-rows: 1fr 1fr;
+}
+
+.todoForm {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+}
+
+.formInput {
+    max-width: 200px;;
+}
+.todoList {
+
+}
